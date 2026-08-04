@@ -1,0 +1,28 @@
+/* [project]/github-explorer/src/components/Header/Header.module.scss.module.css [app-client] (css) */
+.Header-module-scss-module__Hj_6JG__header {
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid #d1d9e0;
+  padding: 2rem;
+}
+
+.Header-module-scss-module__Hj_6JG__title {
+  color: #24292f;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.Header-module-scss-module__Hj_6JG__description {
+  color: #57606a;
+  margin-top: .75rem;
+  font-size: 1rem;
+}
+
+/* [project]/github-explorer/src/app/page.module.scss.module.css [app-client] (css) */
+.page-module-scss-module__gvtJ6G__container {
+  background: #f6f8fa;
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=github-explorer_src_0y0rmt7._.css.map*/
