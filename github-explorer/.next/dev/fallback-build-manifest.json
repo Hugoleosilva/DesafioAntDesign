@@ -9,7 +9,5 @@
     "static/development/_ssgManifest.js",
     "static/development/_clientMiddlewareManifest.js"
   ],
-  "rootMainFiles": [],
-  "rootMainFilesTree": {},
-  "pagesChunkGroupBootstrapParams": {}
+  "rootMainFiles": []
 }

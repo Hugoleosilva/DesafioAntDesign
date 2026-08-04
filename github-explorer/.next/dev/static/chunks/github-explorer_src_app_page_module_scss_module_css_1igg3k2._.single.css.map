@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///C:/Users/hlls/Desktop/desafio_ant_design/DesafioAntDesign/DesafioAntDesign/github-explorer/src/app/page.module.scss"],"sourcesContent":[".container {\r\n  min-height: 100vh;\r\n  background: #f6f8fa;\r\n}"],"names":[],"mappings":"AAAA"}}]
-}

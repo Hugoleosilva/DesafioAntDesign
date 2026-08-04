@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/hlls/Desktop/desafio_ant_design/DesafioAntDesign/DesafioAntDesign/github-explorer/src/app/favicon.ico.mjs%20(structured%20image%20object)"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,gKAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}},
-    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/hlls/Desktop/desafio_ant_design/DesafioAntDesign/DesafioAntDesign/github-explorer/src/app/page.tsx"],"sourcesContent":["export default function Home() {\n  return (\n    <main>\n      <h1>GitHub Explorer</h1>\n    </main>\n  );\n}"],"names":["Home"],"mappings":";;;;;;AAAe,SAASA;IACtB,qBACE,oQAAC;kBACC,cAAA,oQAAC;sBAAG;;;;;;;;;;;AAGV"}}]
-}
