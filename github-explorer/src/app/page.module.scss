@@ -1,4 +1,12 @@
 .container {
   min-height: 100vh;
-  background: #f6f8fa;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

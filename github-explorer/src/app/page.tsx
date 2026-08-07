@@ -39,20 +39,25 @@ export default function Home() {
     <main className={styles.container}>
       <Header />
 
-      <SearchBar onSearch={handleSearch} />
+    <section className={styles.content}>
+      <SearchBar
+          onSearch={handleSearch}
+          isLoading={isLoading}
+      />
 
-      {error && (
-        <Alert
-          title={error}
-          type="error"
-        />
-      )}
+        {error && (
+          <Alert
+            title={error}
+            type="error"
+          />
+        )}
 
-      {isLoading && <Spin />}
+        {isLoading && <Spin />}
 
-      {!isLoading && (
-        <RepositoryList repositories={repositories} />
-      )}
+        {!isLoading && (
+          <RepositoryList repositories={repositories} />
+        )}
+      </section>
     </main>
   );
 }
