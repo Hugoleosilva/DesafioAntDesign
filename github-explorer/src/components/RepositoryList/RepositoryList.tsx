@@ -1,6 +1,7 @@
-import type { Repository } from "@/types/repository";
+import { Col, Row } from "antd";
 
 import RepositoryCard from "@/components/RepositoryCard";
+import type { Repository } from "@/types/repository";
 
 interface RepositoryListProps {
   repositories: Repository[];
@@ -10,13 +11,17 @@ export default function RepositoryList({
   repositories,
 }: RepositoryListProps) {
   return (
-    <div>
+    <Row gutter={[16, 16]}>
       {repositories.map((repository) => (
-        <RepositoryCard
+        <Col
           key={repository.id}
-          repository={repository}
-        />
+          xs={24}
+          sm={12}
+          lg={8}
+        >
+          <RepositoryCard repository={repository} />
+        </Col>
       ))}
-    </div>
+    </Row>
   );
 }

@@ -2,6 +2,8 @@ import { Card, Space, Typography } from "antd";
 
 import type { Repository } from "@/types/repository";
 
+import styles from "./RepositoryCard.module.scss";
+
 interface RepositoryCardProps {
   repository: Repository;
 }
@@ -10,7 +12,7 @@ export default function RepositoryCard({
   repository,
 }: RepositoryCardProps) {
   return (
-    <Card>
+    <Card className={styles.card}>
       <Typography.Link
         href={repository.html_url}
         target="_blank"
@@ -20,7 +22,7 @@ export default function RepositoryCard({
       </Typography.Link>
 
       <Typography.Paragraph>
-        {repository.description}
+        {repository.description || "Sem descrição."}
       </Typography.Paragraph>
 
       <Space>

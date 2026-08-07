@@ -2,7 +2,7 @@
   padding: 2rem;
   text-align: center;
   border-bottom: 1px solid #d1d9e0;
-  background-color: #ffffff;
+  background-color: #f6f8fa;
 }
 
 .title {
@@ -16,4 +16,10 @@
   margin-top: 0.75rem;
   color: #57606a;
   font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
 }
