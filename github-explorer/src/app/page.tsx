@@ -3,6 +3,7 @@
 import { Alert, Spin } from "antd";
 import { useState } from "react";
 
+import FilterBar from "@/components/FilterBar";
 import Header from "@/components/Header";
 import SearchBar from "@/components/SearchBar";
 import RepositoryList from "@/components/RepositoryList";
@@ -17,6 +18,7 @@ export default function Home() {
   const [repositories, setRepositories] = useState<Repository[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [sortOrder, setSortOrder] = useState("desc");
 
   async function handleSearch(username: string) {
     setUsername(username);
@@ -36,6 +38,22 @@ export default function Home() {
     }
   }
 
+  const filteredRepositories = [...repositories].sort(
+    (a, b) => {
+      if (sortOrder === "asc") {
+        return (
+          new Date(a.updated_at).getTime() -
+          new Date(b.updated_at).getTime()
+        );
+      }
+
+      return (
+        new Date(b.updated_at).getTime() -
+        new Date(a.updated_at).getTime()
+      );
+    }
+  );
+
   return (
     <main className={styles.container}>
       <Header />
@@ -45,6 +63,13 @@ export default function Home() {
           onSearch={handleSearch}
           isLoading={isLoading}
         />
+
+        {repositories.length > 0 && (
+        <FilterBar
+          value={sortOrder}
+          onFilterChange={setSortOrder}
+       />
+        )}
 
         {error && (
           <Alert
@@ -65,8 +90,8 @@ export default function Home() {
             />
           )}
 
-        {!isLoading && repositories.length > 0 && (
-          <RepositoryList repositories={repositories} />
+        {!isLoading && filteredRepositories.length > 0 && (
+          <RepositoryList repositories={filteredRepositories} />
         )}
       </section>
     </main>
