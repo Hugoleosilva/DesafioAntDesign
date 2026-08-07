@@ -21,6 +21,7 @@ export default function Home() {
   async function handleSearch(username: string) {
     setUsername(username);
     setError("");
+    setRepositories([]);
     setIsLoading(true);
 
     try {
@@ -39,11 +40,11 @@ export default function Home() {
     <main className={styles.container}>
       <Header />
 
-    <section className={styles.content}>
-      <SearchBar
+      <section className={styles.content}>
+        <SearchBar
           onSearch={handleSearch}
           isLoading={isLoading}
-      />
+        />
 
         {error && (
           <Alert
@@ -54,7 +55,17 @@ export default function Home() {
 
         {isLoading && <Spin />}
 
-        {!isLoading && (
+        {!isLoading &&
+          !error &&
+          username &&
+          repositories.length === 0 && (
+            <Alert
+              title="Este usuário não possui repositórios públicos."
+              type="info"
+            />
+          )}
+
+        {!isLoading && repositories.length > 0 && (
           <RepositoryList repositories={repositories} />
         )}
       </section>

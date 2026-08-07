@@ -5,7 +5,7 @@ export async function getRepositories(
 ): Promise<Repository[]> {
   try {
     const response = await fetch(
-      `https://api.github.com/users/${username}/repos`
+      `https://api.github.com/users/${username}/repos?per_page=100`
     );
 
     if (!response.ok) {
