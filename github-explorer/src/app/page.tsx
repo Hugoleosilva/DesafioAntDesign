@@ -1,5 +1,6 @@
 "use client";
 
+import { Alert, Spin } from "antd";
 import { useState } from "react";
 
 import Header from "@/components/Header";
@@ -14,13 +15,24 @@ import styles from "./page.module.scss";
 export default function Home() {
   const [username, setUsername] = useState("");
   const [repositories, setRepositories] = useState<Repository[]>([]);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleSearch(username: string) {
     setUsername(username);
+    setError("");
+    setIsLoading(true);
 
-    const repositories = await getRepositories(username);
+    try {
+      const repositories = await getRepositories(username);
 
-    setRepositories(repositories);
+      setRepositories(repositories);
+    } catch {
+      setRepositories([]);
+      setError("Usuário não encontrado.");
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -29,7 +41,18 @@ export default function Home() {
 
       <SearchBar onSearch={handleSearch} />
 
-      <RepositoryList repositories={repositories} />
+      {error && (
+        <Alert
+          title={error}
+          type="error"
+        />
+      )}
+
+      {isLoading && <Spin />}
+
+      {!isLoading && (
+        <RepositoryList repositories={repositories} />
+      )}
     </main>
   );
 }
