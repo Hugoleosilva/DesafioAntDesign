@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import Header from "@/components/Header";
 import SearchBar from "@/components/SearchBar";
+import RepositoryList from "@/components/RepositoryList";
+
 import { getRepositories } from "@/services/github";
 import type { Repository } from "@/types/repository";
 
@@ -26,6 +28,8 @@ export default function Home() {
       <Header />
 
       <SearchBar onSearch={handleSearch} />
+
+      <RepositoryList repositories={repositories} />
     </main>
   );
 }
